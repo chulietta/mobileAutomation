@@ -22,7 +22,9 @@ public class MainClassTest extends MainClass {
     public void testGetClassString() {
         String classString = this.getClassString();
         String expectedString = "Hello";
-        assertTrue(classString.toLowerCase().contains(expectedString.toLowerCase()),
+        String expectedStringOptimized = expectedString.replace(expectedString.substring(0, 1), "h");
+
+        assertTrue(classString.toLowerCase().contains(expectedStringOptimized),
                 "String \"" + classString + "\" not contains \"" + expectedString + "\"");
     }
 }
