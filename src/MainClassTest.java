@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MainClassTest extends MainClass{
+public class MainClassTest extends MainClass {
 
     @Test
     public void testGetLocalNumber() {
@@ -16,5 +16,13 @@ public class MainClassTest extends MainClass{
     @Test
     public void testGetClassNumber() {
         assertTrue(this.getClassNumber() > 45, "class_number is not greater than 45");
+    }
+
+    @Test
+    public void testGetClassString() {
+        String classString = this.getClassString();
+        String expectedString = "Hello";
+        assertTrue(classString.toLowerCase().contains(expectedString.toLowerCase()),
+                "String \"" + classString + "\" not contains \"" + expectedString + "\"");
     }
 }
